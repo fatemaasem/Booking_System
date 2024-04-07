@@ -21,13 +21,14 @@ class BookController extends Controller
       $category_id=$book->category_id;
 
         $book->delete();
-        $books=Category::findOrFail($category_id)->book;
-      $categoryName=Category::findOrFail($category_id)->name;
+
         Session::flash('success','Book Deleted successfully');
 
         //$categories=Category::all();
 
-    //  return view('app')->with('categories',$categories);
+    //  return view('app',compact('books','categoryName'));
+    echo "klkgfds";
+    return redirect(url("books/view/$category_id"));
 
 
 /*
@@ -35,7 +36,7 @@ class BookController extends Controller
       print_r($books);
       echo "</pre>";
 */
-      return view('books/view',compact('books','categoryName'));
+
     }
     public function edit($id){
         //check and find member
@@ -133,6 +134,10 @@ public function insert(Request $request){
         return view('books/view',compact('books','categoryName'));
         //return redirect()->back();
     }
-
+    public function view($id){
+        $books=Category::findOrFail($id)->book;
+        $categoryName=Category::findOrFail($id)->name;
+        return view('books.view',compact('books','categoryName'));
+    }
 
 }

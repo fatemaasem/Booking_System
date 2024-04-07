@@ -17,5 +17,6 @@ return
 'Home'=>'الصفحه الرئيسيه',
 'Logout'=>'تسجبل الخروج' ,
 'The selected category is invalid'=>'يجب اختيار قسم',
-'Add Book'=>'اضافه كتاب'
+'Add Book'=>'اضافه كتاب',
+'ltr'=>'rtl'
  ];

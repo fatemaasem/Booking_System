@@ -19,6 +19,14 @@
       border-radius: 5px;
       box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     }
+    /* For Arabic text, align to the right */
+  [dir="rtl"] {
+    text-align: right;
+  }
+  /* For English text, align to the left */
+  [dir="ltr"] {
+    text-align: left;
+  }
   </style>
 </head>
 <body>
@@ -41,10 +49,10 @@
 
 <div class="container">
   <div class="login-container">
-    
+
     <h2 class="text-center mb-4">{{ __('message.Login') }}</h2>
-    
-    <form action="{{ url('login') }}" method="POST">
+
+    <form action="{{ url('login') }}" method="POST" dir="{{ __('message.ltr') }}">
         @csrf
       <div class="form-group">
         <label for="email">{{__('message.Email')}}</label>
@@ -55,9 +63,9 @@
       @enderror
       @error('isFound')
     <div class ="alert alert-danger"> {{ $message }}</div>
-  
-      @enderror                                   
-     
+
+      @enderror
+
       <div class="form-group">
         <label for="password">{{ __('message.Password') }}</label>
         <input type="password" class="form-control" id="password" name="password" >

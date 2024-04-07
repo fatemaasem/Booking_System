@@ -18,6 +18,7 @@ return [
     'Logout'=>'Logout',
     'The selected category is invalid'=>'You must select category ',
     'Add Book'=>'Add Book',
-    '.Book added successfully'=>'.Book added successfully'
+    '.Book added successfully'=>'.Book added successfully',
+    'ltr'=>'ltr'
 
 ];

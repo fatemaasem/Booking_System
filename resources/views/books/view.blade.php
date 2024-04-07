@@ -84,7 +84,9 @@
             <p class="card-text">{{ $book->description }}</p>
             @if (Auth::user()->caseUser==1)
             <button class="btn btn-primary edit-btn"><a style="color:black" href="{{ url("books/edit/$book->id") }}">Edit</a></button>
+            {{-- <form action="{{ url("books/view/$book->id") }}" method="POST"> --}}
             <button class="btn btn-danger delete-btn"><a style="color:black" href="{{ url("books/delete/$book->id") }}">Delete</a></button>
+        {{-- </form> --}}
             @endif
 
           </div>

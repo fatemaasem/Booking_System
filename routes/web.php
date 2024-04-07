@@ -12,7 +12,7 @@ Route::get('/', function () {
 });
 Route::controller(BookController::class)->group(function(){
 
-    Route::get("books/view","view")->middleware('auth');
+    Route::get("books/view/{id}","view")->middleware('auth');
     Route::middleware(['Admin','auth'])->group(function(){
         Route::get("books/edit/{id}","edit");
         Route::post("books/update/{id}","update");

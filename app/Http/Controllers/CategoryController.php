@@ -49,7 +49,8 @@ class CategoryController extends Controller
        $categories=category::paginate(2);
 
 
-      return redirect("category/all")->with('categories',$categories);
+      return redirect("category/all");
+    
 
     }
     public function add(){
